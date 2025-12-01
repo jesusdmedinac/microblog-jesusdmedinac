@@ -2,7 +2,7 @@
 pubDate: 2025-11-30
 author: JesusDMedinaC
 title: Flattening the Pyramid - Best Practices for Readable Jetpack Compose UIs
-description: "Jetpack Compose is a modern, declarative UI toolkit for Android that simplifies and accelerates UI development. Its power lies in its compositional nature—building complex UIs by combining small, independent functions called composables. However, this very nature can lead to a common pitfall: deeply nested code structures that are hard to read and maintain. This is often referred to as the \"Pyramid of Doom\" or an \"arrow shape\" in the code, where each level of nesting adds another layer of indentation."
+description: "This article explores key strategies and best practices to combat the Pyramid of Doom, ensuring your Compose code remains flat, readable, and scalable."
 image:
   url: "/src/images/blog/hadouken.png"
   alt: "#"
@@ -23,7 +23,7 @@ If your compose code looks like a hadouken, keep reading.
 
 This article explores key strategies and best practices to combat this, ensuring your Compose code remains flat, readable, and scalable.
 
-## The Challenge: The Pyramid of Doom
+## The Challenge - The Pyramid of Doom
 
 Consider a simple login form. A naive implementation might look like this:
 
@@ -57,36 +57,40 @@ fun LoginForm() {
 
 While simple, the indentation already starts to grow. As features like error messages, icons, and helper texts are added, this pyramid can quickly become unwieldy.
 
-## Strategy 1: Extract, Extract, Extract!
+## Strategy 1 - Extract, Extract, Extract!
 
 The most powerful technique to flatten your UI code is to **break down large composables into smaller, single-purpose functions.**
 
 Instead of one monolithic function, your UI should be composed of several small, well-named pieces.
 
-### Benefits:
+### Benefits
 
-1.  **Readability:** A top-level composable that reads like an index is much easier to understand than one giant implementation.
-2.  **Reusability:** A custom `EmailField` can be reused across login, sign-up, and profile screens.
-3.  **Testability & Preview-ability:** Each small component can be tested and previewed in isolation, making development faster and more reliable.
+A top-level composable that reads like an index is much easier to understand than one giant implementation. That's what we call **readability**.
 
-## Strategy 2: Master State Hoisting
+In addition, **reusability** may be achieved by extracting a custom `EmailField` can be reused across login, sign-up, and profile screens.
+
+Finally, in order to have a more **testable** and **previewable** code, Each small component can be tested and previewed in isolation, making development faster and more reliable.
+
+## Strategy 2 - Master State Hoisting
 
 Extracting components is most effective when paired with **state hoisting**. This is a core pattern in Compose.
 
 **State hoisting** is the practice of making your components **stateless** by moving their state up to their caller. A stateless component is one that does not hold or manage its own state (i.e., it doesn't use `remember { mutableStateOf(...) }`).
 
-### How It Works:
+### How It Works
 
 -   **State flows down:** A component receives its state as parameters.
 -   **Events flow up:** A component exposes events (like `onClick` or `onValueChange`) as lambda functions that are passed up to the caller.
 
-### Why It's a Game-Changer:
+### Why It's a Game-Changer
 
-1.  **Single Source of Truth:** The state is owned by a common ancestor (like a ScreenModel or a screen-level composable), preventing state duplication and bugs.
-2.  **Enhanced Reusability:** A stateless `PasswordField` doesn't care *where* its state comes from. It just displays the data it's given and reports when something changes. It's universally reusable.
-3.  **Decoupling:** It separates the "what" (the UI) from the "how" (the state management logic).
+Having a **single Source of Truth** means that the state is owned by a common ancestor (like a ScreenModel or a screen-level composable), preventing state duplication and bugs.
 
-## Strategy 3: Embrace the Power of Modifiers
+In other hand, a stateless `PasswordField` doesn't care *where* its state comes from. It **enhanced reusability** by just displaying the data it's given and reports when something changes. It's universally reusable.
+
+We can even separate the "what" (the UI) from the "how" (the state management logic) by **decoupling** the state management logic from the UI.
+
+## Strategy 3 - Embrace the Power of Modifiers
 
 Compose's `Modifier` system is designed to decorate or add behavior to composables without adding extra nesting. Before wrapping a component in a layout for a simple tweak, check if a modifier can do the job.
 
@@ -107,11 +111,11 @@ Text(
 
 This keeps the visual hierarchy flat and makes the chain of modifications applied to a component explicit and easy to read.
 
-## Putting It All Together: A Practical Refactoring
+## Putting It All Together - A Practical Refactoring
 
 Let's apply these principles to the `SignInOrSignUp` function from this project.
 
-### Before: The Monolithic Approach
+### Before - The Monolithic Approach
 
 The original function, while functional, mixes state management, UI implementation for multiple components, and business logic calls.
 
@@ -147,7 +151,7 @@ private fun SignInOrSignUp(authScreenModel: AuthScreenModel) {
 }
 ```
 
-### After: The Compositional Approach
+### After - The Compositional Approach
 
 By extracting smaller components and hoisting their state, the `SignInOrSignUp` function becomes a clean, declarative layout.
 
