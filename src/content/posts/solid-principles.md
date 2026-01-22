@@ -4,10 +4,12 @@ author: JesusDMedinaC
 title: SOLID Principles
 description: "The SOLID principles are a set of five design principles that are used to create maintainable and scalable software."
 image:
-  url: "/src/images/blog/hadouken.png"
-  alt: "#"
+  url: "/src/images/blog/solid-principles.jpg"
+  alt: "SOLID Principles"
 tags: ["SOLID", "Principles", "Design", "Patterns"]
 ---
+
+Foto de <a href="https://unsplash.com/es/@zoltantasi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zoltan Tasi</a> en <a href="https://unsplash.com/es/fotos/formacion-rocosa-marron-rodeada-de-hierba-verde-QxjEi8Fs9Hg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 # SOLID Principles
 
