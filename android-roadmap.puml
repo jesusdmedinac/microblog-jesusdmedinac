@@ -1,0 +1,133 @@
+@startmindmap
+
+skinparam handwritten true
+* Android
+
+right side
+
+** Pick a Language
+*** Kotlin
+*** Java
+
+** The Fundamentals
+*** Development IDE
+*** Basics of Kotlin
+*** Basics of OOP
+*** Data Structures and Algorithms
+*** What is and how to use Gradle?
+*** Create a Basic Hello World App
+
+** Version Control
+*** Git
+*** VCS Hosting
+**** GitHub
+**** Bitbucket
+**** GitLab
+
+** App Components
+*** Activity
+**** Activity LifeCycle
+**** State Changes
+**** Tasks & Backstack
+*** Intent
+**** Implicit Intents
+**** Explicit Intents
+**** Intent Filters
+*** Services
+*** Content Provider
+*** Broadcast Receiver
+
+** Interface & Navigation
+*** Layouts
+**** Frame
+**** Linear
+**** Relative
+**** Constraint
+**** RecycleView
+*** Elements
+**** TextView
+**** Dialogs
+**** Toast
+**** Buttons
+**** Fragments
+**** Bottom Sheet
+**** ImageView
+**** Tabs
+**** EditText
+**** Drawer
+**** ListView
+**** Animations
+*** Jetpack Compose
+*** App Shortcuts
+*** Navigation Components
+
+** Storage
+*** Shared Preferences
+*** DataStore
+*** Room Database
+*** File System
+
+left side
+
+** Design & Architecture
+*** Architectural Patterns
+**** MVI
+**** MVVM
+**** MVP
+**** MVC
+*** Design Patterns
+**** Repository Pattern
+**** Builder Pattern
+**** Factory Pattern
+**** Observer Pattern
+*** Dependency Injection
+**** Dagger
+**** Hilt
+**** Koin
+**** Kodein
+
+** Network
+*** Retro (Retrofit)
+*** OkHttp
+*** Apollo-Android
+
+** Asynchronism
+*** Coroutines
+*** Threads
+*** RxJava / RxKotlin
+*** WorkManager
+*** Flow
+*** LiveData
+
+** Common Services
+*** Firebase
+**** Authentication
+**** Crashlytics
+**** Remote Config
+**** Cloud Messaging
+**** FireStore
+*** Google Admob
+*** Google Play Services
+*** Google Maps
+
+** Testing
+*** Espresso
+*** JUnit
+
+** Linting
+*** Ktlint
+*** Detekt
+
+** Debugging
+*** Timber
+*** Leak Canary
+*** Chucker
+*** Jetpack Benchmark
+
+** Distribution
+*** Signed APK
+*** Ways to distribute
+**** Firebase Distribution
+**** Google Playstore
+
+@endmindmap
